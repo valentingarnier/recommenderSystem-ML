@@ -75,7 +75,7 @@ sampleFrame = split3columns(sample)
 
 reader = Reader(rating_scale=(1, 5))
 
-#Here we call surprise function 
+#Here we call surprise function
 
 dataCleaned = Dataset.load_from_df(cleanedFrame[['userId', 'movieId', 'rating']], reader)
 sampleCleaned = Dataset.load_from_df(sampleFrame[['userId', 'movieId', 'rating']], reader)
@@ -98,12 +98,12 @@ testset = sampleCleaned.build_full_trainset().build_testset()
 
 
 testset_reordered = reorderTestset(testset)
-testset_reordered.to_csv("testset_reordered.csv", index = False) 
+testset_reordered.to_csv("testset_reordered.csv", index = False)
 
 
 # # Train Algorithms
 
-# Based on each gridsearch, we apply the same parameters for each algorithms on 
+# Based on each gridsearch, we apply the same parameters for each algorithms on
 # sample test set to get individual predictions.
 
 # ## SVD
@@ -373,10 +373,10 @@ test_predictions_als = testFrame['rating'].values
 stacked_test_predictions = np.column_stack((
     test_predictions_svd_filtered,
     test_predictions_svdpp_filtered,
-    test_predictions_slope_filtered, 
+    test_predictions_slope_filtered,
     test_predictions_knn_items_filtered,
-    test_predictions_knn_users_filtered, 
-    test_predictions_baselines_filtered, 
+    test_predictions_knn_users_filtered,
+    test_predictions_baselines_filtered,
     test_predictions_global_filtered,
     test_predictions_users,
     test_predictions_items,
@@ -388,7 +388,7 @@ print("Stacking only best models...\n")
 stacked_test_pred_matrix = np.column_stack((
     test_predictions_svd_filtered,
     test_predictions_svdpp_filtered,
-    test_predictions_knn_users_filtered, 
+    test_predictions_knn_users_filtered,
     test_predictions_als
     ))
 
@@ -489,7 +489,3 @@ result_blending.to_csv("result_blending_expanded.csv", index = False)
 
 
 # In[ ]:
-
-
-
-

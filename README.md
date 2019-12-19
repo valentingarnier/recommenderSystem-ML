@@ -12,3 +12,10 @@ In this folder you can find:
 * validation_gridsearch: This notebook computes the optimal weights of each model (expanded with feature expansion)
     It does a grid search for each algorithm individually, train them on a train set, and take predictions on a validation set.
     It then run a ridge regression using Scikit to obtain optimal weights that we copy inside Blendmodels
+
+
+## How to reproduce our best score
+
+If you don't have surprise, you can run run.py using the following command: `ipython run.py`.
+First line of the code will install surprise for you.
+Please make sure to update the path for data set and sample submission csv files.   
