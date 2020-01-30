@@ -18,4 +18,4 @@ In this folder you can find:
 
 If you don't have surprise, you can run run.py using the following command: `ipython run.py`.
 First line of the code will install surprise for you.
-Please make sure to update the path for data set and sample submission csv files.   
+Please make sure to update the path for data set and sample submission csv files.

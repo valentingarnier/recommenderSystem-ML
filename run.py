@@ -462,7 +462,7 @@ weights_opt = np.array([-1.79605641e-01, -7.63823414e-02, 7.09880620e-01, 6.4022
 -2.05275807e-02, -5.50000332e-04, -4.41913407e-02, -1.24416930e-02,
 -1.89475553e-01, 7.94738754e-02, 7.06314694e-02])
 
-print("Multiply with weights from validation set...")
+print("Multiply with weights from validation set ....")
 targets = stacked_test_pred_matrix.dot(weights_opt)
 targets = np.clip(targets, 1, 5)
 print("done. \n")

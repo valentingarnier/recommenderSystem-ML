@@ -3,6 +3,7 @@ import numpy as np
 import re
 
 
+#This function reorder the testset for ALS algorithm.
 def reorderTestset(testset):
     d = []
 
@@ -12,6 +13,7 @@ def reorderTestset(testset):
     return pd.DataFrame(d, columns = ('Id', 'Prediction'))
 
 
+#Reformat the data according to surpise library.
 def split3columns(data):
     cleanedFrame = pd.DataFrame({
         'userId': data["Id"].apply(lambda x: int(re.search('r(.*)_' , x).group(1))),
@@ -20,6 +22,7 @@ def split3columns(data):
     })
     return cleanedFrame
 
+#get the validation labels
 def getValidationLabels(validation_test):
     yvalid = []
     for i in range(len(validation_test)):
@@ -49,6 +52,7 @@ def itemMean(trainingset, validation_frame):
 
     return pred_items
 
+#put all targets rounded in the sample_submission format.
 def reconstructSampleSubmissionFormat(test_predictions_example, targets_rounded):
     d = []
 
